@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="prise" id="prise">
+        <option value="">--Prise--</option>
+    </select>
+
+    <div id="resultat"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const prise = document.getElementById('prise');
+            const resultat = document.getElementById('resultat');
+
+            fetch('http://localhost:3000/prise')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erreur réseau lors de la récupération des données.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // 清除 <select> 元素中的现有选项
+                    prise.innerHTML = '<option value="">--Prise--</option>';
+
+                    // 添加新的选项到 <select> 元素中
+                    data.forEach(item => {
+                        let newOption = document.createElement('option');
+                        newOption.textContent = item.nomPrise;
+                        newOption.value = item.id; // 设置选项的值为每个元素的 ID，方便后续使用
+                        prise.appendChild(newOption);
+                    });
+
+                    // 添加事件监听器到 <select> 元素
+                    prise.addEventListener('change', (event) => {
+                        const selectedId = event.target.value;
+                        const selectedItem = data.find(item => item.id == selectedId);
+
+                        // 清除之前的结果
+                        resultat.innerHTML = '';
+
+                        if (selectedItem) {
+                            // 显示选中的结果
+                            let resultItem = document.createElement('div');
+                            resultItem.textContent = `ID: ${selectedItem.id}, Name: ${selectedItem.nomPrise}`;
+                            resultat.appendChild(resultItem);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Il y a eu un problème avec l\'opération fetch:', error.message);
+                });
+        });
+    </script>
+</body>
+</html>

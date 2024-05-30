@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth-compat.js"></script>
+    <script src="bienvenu.js" defer></script>
+  </head>
+  <body class="horizontal-gradient">
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div>
+
+    <div class="mainconect">
+      <div class="content-auto-auto content-padding-h-15">
+        <div class="content-100p-auto flex-center-center content-padding-v-15 text-center line-22 bold s24">
+          <label for="connexion">Se connecter </label>
+        </div>
+        <!-- Email  -->
+        <div class="content-100p-auto text-left content-padding-b-10">
+          <div class="email">
+            <label for="email" class="uppercase-first">e-mail</label>
+          </div>
+          <input type="email" name="email" id="email" placeholder="Adresse e-mail..."/>
+        </div>
+
+        <!-- passWord -->
+        <div class="content-100p-auto text-left content-padding-b-10">
+          <div class="pass">
+            <label for="password"  class="uppercase-first">mot de passe</label>
+            <input type="password" name="password" id="password" placeholder="Mot de passe..."/>
+          </div>
+        </div>
+
+        <div id="error-message" style="color: red;"></div>
+
+        <div class="content-auto-auto bold">
+          <!-- Sign Up button -->
+          <button id="submit-btn" onclick="signIn()">Se connecter</button>
+        </div>
+        
+      </div>
+    </div>      
+    </div>
+  </body>
+</html>

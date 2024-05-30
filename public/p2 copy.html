@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="p2script copy 3.js" defer></script>
+    <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=AWPtI3k5QNFmEOZWW3kOP9tbp8ezQBj3-rz1n-xonY5pMqOVp1NiTIwe1Ux_ZlBQRKpafg7laoFcm_sy"></script>
+    <title> p2 </title>
+</head>
+<body class="horizontal-gradient">
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div>
+    <div>
+        <div class="p1page">
+            <div class="content-100p-100p flex-center-center content-padding-t-15">
+                <div id="nom" class="flex-center-center uppercase-first text-center"> 
+                    bienvenu 
+                </div>
+            </div>
+            <div class="content-100p-100p flex-center-center content-padding-v-15">
+                <div id="chercherPrise" class="flex-center-center uppercase-first text-center"> 
+                    <label for="Prise"> Prise : </label>
+                    <input id="nomchercher" type="text"> 
+                    <button id="btnchercher">on</button>
+                </div>
+            </div>
+
+            <div class="content-100p-100p flex-center-center content-padding-h-15">
+                <div id="monBouton" class="flex-center-center">
+                    <div id="btn0" style="display: block;"> <img src="svg/bouton0.png"> </div>
+                    <div id="btn1" style="display: none;"> <img src="svg/bouton1.png"> </div>
+                </div>
+            </div>
+            
+            
+            <div class="content-auto-auto flex-center-center content-padding-v-15">
+                <div class="uppercase-first text-center">
+                    Votre credit est:
+                </div>
+                <div id="credit" class="content-auto-auto flex-center-center content-padding-h-5"> </div> 
+                <div class="content-auto-auto flex-center-center" > Wh </div>
+            </div>
+
+            <div class="content-auto-auto flex-center-center content-padding-b-15">
+                <div id="recharger" class="content-auto-auto border-1-E69E41 flex-center-center content-padding-5 radius-5 bold c-E69E41 active-E69E41 pointer">
+                    <div class="uppercase-first text-center">
+                        recharger
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+
+    <div style="display: none;" id="rechargerModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <label for="number"> Energie : </label>
+            <input type="number" id="amount" oninput="updateTotal()"> kWh
+            
+            <div id="resultat"> Total : 
+                <label for="total" id="euros">0</label>
+                <label for="total">€</label>
+
+            </div>
+            <br>
+            <br>
+            <div id="paypal"></div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
