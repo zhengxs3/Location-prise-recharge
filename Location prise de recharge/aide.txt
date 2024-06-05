@@ -1,0 +1,6 @@
+mosquitto_pub -h 192.168.5.60 -t 'shellyplusplugs-e465b8b82e18/command/switch:0' -m 'off'
+mosquitto_pub -h 192.168.5.60 -t 'shellyplusplugs-e465b8b82e18/command/switch:0' -m 'on'
+
+shellyplusplugs-e465b8b41e28
+mosquitto_pub -h 192.168.5.60 -t 'shellyplusplugs-e465b8b41e28/command/switch:0' -m 'off'
+mosquitto_pub -h 192.168.5.60 -t 'shellyplusplugs-e465b8b41e28/command/switch:0' -m 'on'
